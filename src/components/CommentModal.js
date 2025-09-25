@@ -19,8 +19,21 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
   },
+  container: {
+    width: "70%", // make it not tiny and squished
+    maxWidth: 800, // arbitray number, looks good on my screen but probably not others
+  },
   form: {
     backgroundColor: theme.palette.primary.main,
+    padding: theme.spacing(4),
+    borderRadius: theme.shape.borderRadius,
+    outline: "none",
+    display: "flex",
+    flexDirection: "column",
+    gap: theme.spacing(5),
+  },
+  button: {
+    backgroundColor: theme.palette.secondary.main,
   },
 }));
 
@@ -51,8 +64,13 @@ const CommentModal = () => {
       aria-labelledby="simple-modal-title"
       aria-describedby="simple-modal-description"
     >
-      <div className={classes.form}>
-        <form noValidate autoComplete="off" onSubmit={handleSubmit}>
+      <div className={classes.container}>
+        <form
+          noValidate
+          autoComplete="off"
+          onSubmit={handleSubmit}
+          className={classes.form}
+        >
           <TextField
             label="name"
             value={name}
@@ -62,9 +80,13 @@ const CommentModal = () => {
             label="comment"
             value={comment}
             onChange={(e) => setComment(e.target.value)}
-            variant="outlined"
+            variant="filled" // changed from outlined to filled because changing the background color removes outlining.
+            multiline
+            minRows={3}
           />
-          <Button type="submit">Add Comment</Button>
+          <Button className={classes.button} type="submit">
+            Add Comment
+          </Button>
         </form>
       </div>
     </Modal>
