@@ -11,6 +11,7 @@ import { openCommentsModal } from "store/slices/view";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    backgroundColor: theme.palette.primary.main,
   },
 
   title: {

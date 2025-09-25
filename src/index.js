@@ -3,8 +3,10 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
 import "index.css";
+import theme from "theme";
 import store from "store";
 import reportWebVitals from "reportWebVitals";
+import { ThemeProvider } from "@material-ui/core";
 
 const rootEl = document.getElementById("root");
 
@@ -15,7 +17,9 @@ const render = () => {
   const wrappedApp = (
     <React.StrictMode>
       <Provider store={store}>
-        <App />
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
       </Provider>
     </React.StrictMode>
   );
