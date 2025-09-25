@@ -5,7 +5,7 @@ import commentReducer, { name as commentName } from "store/slices/comments";
 
 const rootReducer = combineReducers({
   [viewName]: viewReducer,
-  [commentName]: commentReducer,
+  [commentName]: commentReducer, // again, kept with the practice of abstracting the name as a variable.
 });
 
 export default rootReducer;

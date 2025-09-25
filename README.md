@@ -1,32 +1,28 @@
-
 # AVB Frontend Assesment
 
 ## User Story
 
 As a user, I would like to be able to read a list of comments, add a comment, and see a list of the top 3 commenters.
 
-
 ### Tasks
 
 > Please add comments to help explain decisions and add a summary to the README
 
-1) Use Material-UI theme for custom color scheme(primary and secondary colors)
-2) Display list of comments
-   1) Comment UI should consist of avatar(first initial or first + last initial), name, and comment
-   2) `store/api` has mock comments
-   3) Extra: fetch from API to display initial comments instead of mock comments
-3) Facilitate adding a comment via modal with input fields(name and comment), and submit button
-4) Display a list of top 3 commenters
-   1) Ui should consist of avatar(same as above) name, and comment count
-   2) Should be listed in descending order of comment count
-
+1. Use Material-UI theme for custom color scheme(primary and secondary colors)
+2. Display list of comments
+   1. Comment UI should consist of avatar(first initial or first + last initial), name, and comment
+   2. `store/api` has mock comments
+   3. Extra: fetch from API to display initial comments instead of mock comments
+3. Facilitate adding a comment via modal with input fields(name and comment), and submit button
+4. Display a list of top 3 commenters
+   1. Ui should consist of avatar(same as above) name, and comment count
+   2. Should be listed in descending order of comment count
 
 ### Useful Links
 
-* https://v4.mui.com/
-* https://redux-toolkit.js.org/
-* https://jsonplaceholder.typicode.com/comments
-
+- https://v4.mui.com/
+- https://redux-toolkit.js.org/
+- https://jsonplaceholder.typicode.com/comments
 
 # Getting Started with Create React App
 
@@ -98,3 +94,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### step 1
+
+This was pretty straightforward, especially since makeStyles was already put together for me. I grabbed two colors from the color picker built into google (although I feel I got pretty close to the Twitch purple just purely on accident). I chose purple and grey, so not the best colors for something like text color, but I was able to change other stuff like the header and avatar colors.
+
+### step 2
+
+I built a basic version first, starting with a simple slice that just gets comments, no functionality for adding comments yet. also just using the mock comments first as well. tried following the similar practices as the base code when it comes to slices, exporting the name to be used in the combineReducer method, etc. started with just a ul/li setup to make sure I could grab the mock comments and map over them with my selector. once I had it going on the page, went back, grabbed the appropriate MUI components and built it out again. Wasn't necessary but also added a divider component at the bottom for a bit of extra je ne sais quoi.
