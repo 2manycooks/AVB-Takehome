@@ -33,7 +33,7 @@ export default function CommentsPage() {
       {comments.map((comment) => {
         return (
           <>
-            <ListItem>
+            <ListItem key={comment.id}>
               <ListItemAvatar>
                 <Avatar className={classes.avatar}>
                   {initials(comment.name)}
